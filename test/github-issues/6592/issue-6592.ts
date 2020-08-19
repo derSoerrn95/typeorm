@@ -18,7 +18,7 @@ describe("github issues > #6592 ER_DUP_ENTRY error when updating entity with big
     after(() => closeTestingConnections(connections));
 
     it("should create bigIntPkEntity", async () => {
-        const id = 9962902123;
+        const id = '8223372036854775807';
         const name = "big int pk entity test";
         const quantity = 60;
         const entity = new BigIntPkEntity();
@@ -35,7 +35,7 @@ describe("github issues > #6592 ER_DUP_ENTRY error when updating entity with big
     });
 
     it("should get bigIntPkEntity", async () => {
-        const id = 9962902123;
+        const id = '8223372036854775807';
         const name = "big int pk entity test";
         const quantity = 60;
         const result: BigIntPkEntity | undefined = await getRepository(BigIntPkEntity).findOne(id);
@@ -47,7 +47,7 @@ describe("github issues > #6592 ER_DUP_ENTRY error when updating entity with big
     });
 
     it("should update bigIntPkEntity", async () => {
-        const id = 9962902123;
+        const id = '8223372036854775807';
         const name = "big int pk entity test";
         const quantity = 2;
         const entity = new BigIntPkEntity();
@@ -64,7 +64,7 @@ describe("github issues > #6592 ER_DUP_ENTRY error when updating entity with big
     });
 
     it("should remove bigIntPkEntity", async () => {
-        const id = 9962902123;
+        const id = '8223372036854775807';
         let result = await getRepository(BigIntPkEntity).delete({id: id});
 
         expect(result).to.not.be.undefined;

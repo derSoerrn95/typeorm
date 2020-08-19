@@ -4,7 +4,7 @@ import {Column, Entity, PrimaryColumn} from "../../../../src";
 export class BigIntPkEntity {
 
     @PrimaryColumn({type: "bigint"})
-    id: number;
+    id: string;
 
     @Column()
     name: string;

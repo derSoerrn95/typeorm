@@ -484,9 +484,6 @@ export class MysqlDriver implements Driver {
         if (columnMetadata.type === Boolean || columnMetadata.type === "bool" || columnMetadata.type === "boolean") {
             value = value ? true : false;
 
-        } else if (columnMetadata.type === "bigint") {
-            value = parseInt(value);
-
         } else if (columnMetadata.type === "datetime" || columnMetadata.type === Date) {
             value = DateUtils.normalizeHydratedDate(value);
 
